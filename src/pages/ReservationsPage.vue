@@ -7,11 +7,11 @@
       <!-- TITLE -->
       <div class="flex flex-row text-4xl font-bold items-center mt-8">
         <img
-          src="/src/assets/calendar-dark.svg"
-          alt="logo"
-          class="h-10 w-10 mr-2 mb-2"
+            src="/src/assets/calendar-dark.svg"
+            alt="logo"
+            class="h-10 w-10 mr-2 mb-2"
         />
-        <h1>Reservations</h1>
+        <h1>Réservations</h1>
       </div>
     </div>
   </div>

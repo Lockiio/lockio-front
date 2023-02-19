@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainLayout from "../layouts/MainLayout.vue";
-import AboutPage from "../layouts/AboutPage.vue";
-import NotFound from "../layouts/NotFoundPage.vue";
-import LoginPage from "../layouts/LoginPage.vue";
-import LockiosPage from "../layouts/LockiosPage.vue";
-import ReservationsPage from "../layouts/ReservationsPage.vue";
-import ProfilePage from "../layouts/ProfilePage.vue";
+import AboutPage from "../pages/AboutPage.vue";
+import NotFound from "../pages/NotFoundPage.vue";
+import LoginPage from "../pages/LoginPage.vue";
+import LockiosPage from "../pages/LockiosPage.vue";
+import ReservationsPage from "../pages/ReservationsPage.vue";
+import ProfilePage from "../pages/ProfilePage.vue";
 
 const routes = [
   {

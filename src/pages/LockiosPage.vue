@@ -7,9 +7,9 @@
       <!-- TITLE -->
       <div class="flex flex-row text-4xl font-bold items-center mt-8">
         <img
-            src="/src/assets/locker-dark.svg"
-            alt="logo"
-            class="h-10 w-10 mr-2 mb-2"
+          src="/src/assets/locker-dark.svg"
+          alt="logo"
+          class="h-10 w-10 mr-2 mb-2"
         />
         <h1>Lockios</h1>
       </div>
@@ -19,11 +19,11 @@
         <!-- TODO : PASS THE LOCKIO AS PROPS = GET ALL INFOS IN COMPONENT -->
         <lockios-block :title="prototype"></lockios-block>
         <div
-            class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+          class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
         ></div>
         <lockios-block :title="metro"></lockios-block>
         <div
-            class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+          class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
         ></div>
         <lockios-block :title="bar"></lockios-block>
       </div>
