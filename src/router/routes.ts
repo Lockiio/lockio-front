@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainLayout from "../layouts/MainLayout.vue";
-import AboutPage from "../pages/AboutPage.vue";
+import ContactPage from "../pages/ContactPage.vue";
 import NotFound from "../pages/NotFoundPage.vue";
 import LoginPage from "../pages/LoginPage.vue";
 import LockiosPage from "../pages/LockiosPage.vue";
@@ -14,9 +14,9 @@ const routes = [
     component: MainLayout,
   },
   {
-    path: "/about",
-    name: "About",
-    component: AboutPage,
+    path: "/contact",
+    name: "Contact",
+    component: ContactPage,
   },
   {
     path: "/lockios",
