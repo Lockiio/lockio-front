@@ -5,7 +5,13 @@
         <img src="/src/assets/lockio.svg" alt="logo" class="h-10 w-10" />
         <span class="ml-4 text-xl font-bold">Lockio</span>
       </div>
-      <button @click="$router.push({ name: 'About' })">About</button>
+      <!-- About button -->
+      <button
+        class="bg-gray-700 hover:bg-gray-900 text-white rounded-xl p-2 text-center"
+        @click="$router.push('contact')"
+      >
+        Contact
+      </button>
     </nav>
   </div>
 </template>
