@@ -7,25 +7,24 @@
       <!-- TITLE -->
       <div class="flex flex-row text-4xl font-bold items-center mt-8">
         <img
-          src="/src/assets/locker-dark.svg"
-          alt="logo"
-          class="h-10 w-10 mr-2 mb-2"
+            src="/src/assets/locker-dark.svg"
+            alt="logo"
+            class="h-10 w-10 mr-2 mb-2"
         />
         <h1>Lockios</h1>
       </div>
 
       <!-- BLOCKS -->
       <div class="mt-12 ml-2">
-        <!-- TODO : PASS THE LOCKIO AS PROPS = GET ALL INFOS IN COMPONENT -->
-        <lockios-block :title="prototype"></lockios-block>
-        <div
-          class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
-        ></div>
-        <lockios-block :title="metro"></lockios-block>
-        <div
-          class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
-        ></div>
-        <lockios-block :title="bar"></lockios-block>
+        <div v-for="block in blocks">
+          <lockios-block
+              :block="block"
+              :lockios="findLockios(block.id)"
+          ></lockios-block>
+          <div
+              class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+          ></div>
+        </div>
       </div>
     </div>
   </div>
@@ -34,10 +33,19 @@
 <script setup lang="ts">
 import VerticalNavbar from "../components/navbars/VerticalNavbar.vue";
 import LockiosBlock from "../components/lockios/LockiosBlock.vue";
+import {useLockioStore} from "../stores/lockio-store";
+import {computed} from "vue";
 
-const prototype = "Prototype";
-const metro = "Métro Paul Sabatier";
-const bar = "La Fabrique";
+const lockioStore = useLockioStore();
+
+lockioStore.fetchAllLockios();
+const blocks = computed(() => lockioStore.blocks);
+
+const findLockios = (blockId: number) => {
+  return lockioStore.lockios.has(blockId)
+      ? lockioStore.lockios.get(blockId)
+      : [];
+};
 </script>
 
 <style scoped></style>
