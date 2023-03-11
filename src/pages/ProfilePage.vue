@@ -9,9 +9,9 @@
         <div class="flex flex-row justify-between text-4xl font-bold mt-8">
           <div class="flex">
             <img
-                src="/src/assets/profile-dark.svg"
-                alt="logo"
-                class="h-10 w-10 mr-2 mb-2"
+              src="/src/assets/profile-dark.svg"
+              alt="logo"
+              class="h-10 w-10 mr-2 mb-2"
             />
             <h1>Profil</h1>
           </div>
@@ -30,7 +30,7 @@
 import VerticalNavbar from "../components/navbars/VerticalNavbar.vue";
 import HamburgerMenu from "../components/HamburgerMenu.vue";
 import MobileMenu from "../components/MobileMenu.vue";
-import {ref} from "vue";
+import { ref } from "vue";
 
 const menuOpened = ref(false);
 

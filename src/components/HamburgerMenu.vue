@@ -9,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-
 const emit = defineEmits(["toggleMenu"]);
 
 const toggleMenu = () => {
@@ -17,6 +16,4 @@ const toggleMenu = () => {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
