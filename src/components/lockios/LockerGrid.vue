@@ -3,8 +3,8 @@
     <div v-for="lockioArray in lockiosSplit" class="flex flex-row">
       <div v-for="lockio in lockioArray">
         <button
-          class="bg-gray-600 w-28 h-28 mr-2 mt-2 rounded-xl disabled:opacity-50"
-          :class="{
+            class="bg-gray-600 w-24 h-24 mr-2 mt-2 rounded-xl disabled:opacity-50"
+            :class="{
             available: is(lockio.id, 'AVAILABLE'),
             occupied: is(lockio.id, 'OCCUPIED'),
             active: selectedLockio.id === lockio.id,
@@ -12,14 +12,14 @@
               selectedLockio.id !== lockio.id &&
               selectedLockio.id !== undefined,
           }"
-          @click="updateSelected(lockio)"
-          :disabled="
+            @click="updateSelected(lockio)"
+            :disabled="
             lockio.status !== 'AVAILABLE' && lockio.status !== 'OCCUPIED'
           "
         >
           <span class="text-xl">{{ lockio.localId }}</span>
-          <br />
-          <span class="font-bold">{{ lockio.status }}</span>
+          <br/>
+          <span class="font-bold">{{ lockio.size }}</span>
         </button>
       </div>
     </div>
@@ -27,8 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, PropType, ref } from "vue";
-import { Lockio } from "../../models/models";
+import {computed, PropType, ref} from "vue";
+import {Lockio} from "../../models/models";
 
 const props = defineProps({
   lockios: {
