@@ -7,9 +7,9 @@
     <div class="flex flex-col mt-4">
       <div class="font-bold">📦 Dimensions</div>
       <div class="flex flex-col">
-        <div>4 casiers de taille S (30x50x30)</div>
-        <div>4 casiers de taille M (60x50x30)</div>
-        <div>4 casiers de taille L (100x50x30)</div>
+        <div>{{ nbSizeS }} casiers de taille S (30x50x30)</div>
+        <div>{{ nbSizeM }} casiers de taille M (60x50x30)</div>
+        <div>{{ nbSizeL }} casiers de taille L (100x50x30)</div>
       </div>
     </div>
     <div class="flex flex-col mt-4">
@@ -28,6 +28,21 @@
   </div>
 </template>
 
-<script></script>
+<script setup lang="ts">
+import { Lockio } from "../../models/models";
+import { computed } from "vue";
+
+const props = defineProps<{
+  lockios: Lockio[];
+}>();
+
+const getNumber = (lockios: Lockio[], size: string) => {
+  return lockios.filter((lockio) => lockio.size === size).length;
+};
+
+const nbSizeS = computed(() => getNumber(props.lockios, "SMALL"));
+const nbSizeM = computed(() => getNumber(props.lockios, "MEDIUM"));
+const nbSizeL = computed(() => getNumber(props.lockios, "LARGE"));
+</script>
 
 <style scoped></style>
