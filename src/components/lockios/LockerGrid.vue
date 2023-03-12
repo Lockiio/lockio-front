@@ -7,15 +7,14 @@
           :class="{
             available: is(lockio.id, 'AVAILABLE'),
             occupied: is(lockio.id, 'OCCUPIED'),
+            prereserved: is(lockio.id, 'PRERESERVED'),
             active: selectedLockio.id === lockio.id,
             inactive:
               selectedLockio.id !== lockio.id &&
               selectedLockio.id !== undefined,
           }"
           @click="updateSelected(lockio)"
-          :disabled="
-            lockio.status !== 'AVAILABLE' && lockio.status !== 'OCCUPIED'
-          "
+          :disabled="lockio.status !== 'AVAILABLE'"
         >
           <span class="text-xl">{{ lockio.localId }}</span>
           <br />
@@ -29,6 +28,9 @@
 <script setup lang="ts">
 import { computed, PropType, ref } from "vue";
 import { Lockio } from "../../models/models";
+import axios from "axios";
+import { API_BACK_URL } from "../../utils/constant";
+import { useLockioStore } from "../../stores/lockio-store";
 
 const props = defineProps({
   lockios: {
@@ -55,7 +57,20 @@ const is = (id: number, state: string) => {
 let selectedLockio = ref({} as Lockio);
 
 const updateSelected = (lockio: Lockio) => {
+  console.log(lockio);
   selectedLockio.value = lockio as Lockio;
+  axios
+    .patch(API_BACK_URL + `/blocks/${lockio.blockId}/lockios/${lockio.id}`, {
+      status: lockio?.status,
+      action: "PRERESERVE",
+    })
+    .then((response) => {
+      useLockioStore().fetchAllLockios();
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 const lockiosSplit = computed(() => splitArrays(lockios.value, 3));
@@ -82,6 +97,16 @@ const lockiosSplit = computed(() => splitArrays(lockios.value, 3));
   box-shadow: darkslateblue 0 0 0 3px;
 }
 
+.prereserved {
+  background-color: #ceae80;
+}
+
+.prereserved.active {
+  background-color: #ceae80;
+  animation: pulse-prereserved 0.8s infinite alternate;
+  box-shadow: darkslateblue 0 0 0 3px;
+}
+
 @keyframes pulse-available {
   0% {
     background-color: #6ed26e;
@@ -97,6 +122,15 @@ const lockiosSplit = computed(() => splitArrays(lockios.value, 3));
   }
   100% {
     background-color: #eb5b5b;
+  }
+}
+
+@keyframes pulse-prereserved {
+  0% {
+    background-color: #ceae80;
+  }
+  100% {
+    background-color: #cca164;
   }
 }
 </style>
