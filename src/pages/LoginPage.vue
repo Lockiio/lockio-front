@@ -2,7 +2,7 @@
   <div id="container">
     <nav class="w-100 flex items-center justify-between">
       <div class="flex items-center cursor-pointer" @click="$router.push('/')">
-        <img src="/src/assets/lockio.svg" alt="logo" class="h-10 w-10" />
+        <img src="/src/assets/lockio.svg" alt="logo" class="h-10 w-10"/>
         <span class="ml-4 text-xl font-bold">Lockio</span>
       </div>
     </nav>
@@ -17,33 +17,34 @@
           <div class="flex flex-col">
             <label for="email" class="text-sm">Email</label>
             <input
-              type="email"
-              id="email"
-              class="border border-gray-800 bg-white rounded-xl p-3 mt-2 text-gray-800"
-              placeholder="tchoukdu12@toulouse.miage.fr"
+                type="email"
+                id="email"
+                class="border border-gray-800 bg-white rounded-xl p-3 mt-2 text-gray-800"
+                placeholder="tchoukdu12@toulouse.miage.fr"
             />
           </div>
           <div class="flex flex-col mt-4">
             <label for="password" class="text-sm">Mot de passe</label>
             <input
-              type="password"
-              id="password"
-              class="border border-gray-800 bg-white rounded-xl p-3 mt-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-gray"
-              placeholder="*********"
+                type="password"
+                id="password"
+                class="border border-gray-800 bg-white rounded-xl p-3 mt-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-gray"
+                placeholder="*********"
             />
             <div class="text-sm mt-1 italic">Mot de passe oublié?</div>
           </div>
         </div>
         <div class="flex flex-col text-center items-center mt-8 md:w-2/5">
           <button
-            @click="$router.push({ name: 'Lockios' })"
-            class="bg-gray-700 hover:bg-gray-900 text-white rounded-xl p-3 w-1/2 text-center"
+              @click="$router.push({ name: 'Lockios' })"
+              class="bg-gray-700 hover:bg-gray-900 text-white rounded-xl p-3 w-1/2 text-center"
           >
-            Se connecter
+            Se connecter (invité)
           </button>
           <div class="my-2">ou</div>
           <button
-            class="bg-gray-700 hover:bg-gray-900 text-white rounded-xl p-3 w-1/2 text-center"
+              class="bg-gray-700 hover:not:disabled:bg-gray-900 text-white rounded-xl p-3 w-1/2 text-center disabled:opacity-50 :disabled:cursor-not-allowed"
+              disabled
           >
             S'inscrire
           </button>
@@ -53,7 +54,7 @@
     <!-- RIGHT SIDE WITH WHITE BACKGROUND -->
     <div id="right-side">
       <div
-        class="hidden md:block md:w-2/5 lg:w-1/3 h-screen bg-white absolute top-0 right-0"
+          class="hidden md:block md:w-2/5 lg:w-1/3 h-screen bg-white absolute top-0 right-0"
       >
         <div class="ml-14 mr-14">
           <div class="flex flex-col mt-44 text-3xl">
