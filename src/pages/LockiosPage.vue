@@ -19,7 +19,7 @@
         </div>
 
         <!-- BLOCKS -->
-        <div class="mt-12 ml-2">
+        <div class="mt-12 ml-8">
           <div v-for="block in blocks">
             <lockios-block
                 :block="block"
