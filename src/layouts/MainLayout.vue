@@ -12,6 +12,14 @@
           Réserver un Lockio
           <font-awesome-icon icon="fa-solid fa-chevron-right"/>
         </button>
+        <br>
+        <button
+            class="bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-yellow-700 hover:text-white hover:border-amber-400 transition duration-300"
+            onclick="window.open('http://lockio.fr:8080/swagger-ui.html')"
+        >
+          Consulter l'API
+          <font-awesome-icon icon="fa-solid fa-chevron-right"/>
+        </button>
       </div>
       <div class="mt-16 text-3xl font-extrabold">Lockio, c'est quoi ?</div>
     </div>
@@ -20,7 +28,6 @@
     </div>
     <div class="mt-8">
       <MainQuestions></MainQuestions>
-      <img class="absolute -right-60 bottom-2 w-1/2 h-1/5 -z-50" src="/src/assets/blur.svg" alt="logo"/>
     </div>
   </div>
 </template>
