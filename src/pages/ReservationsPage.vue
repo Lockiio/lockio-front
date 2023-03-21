@@ -4,9 +4,9 @@
       <div class="hidden lg:block">
         <vertical-navbar></vertical-navbar>
       </div>
-      <div class="flex flex-col h-screen w-screen ml-8 md:overflow-auto">
+      <div class="flex flex-col h-screen w-screen md:overflow-auto">
         <!-- TITLE -->
-        <div class="flex flex-row justify-between text-4xl font-bold mt-8">
+        <div class="flex flex-row justify-between ml-8 mr-8 text-4xl font-bold mt-8">
           <div class="flex">
             <img
                 src="/src/assets/calendar-dark.svg"

@@ -4,14 +4,14 @@
       <div class="hidden lg:block">
         <vertical-navbar></vertical-navbar>
       </div>
-      <div class="flex flex-col h-screen w-screen ml-8 md:overflow-auto">
+      <div class="flex flex-col h-screen w-screen md:overflow-auto">
         <!-- TITLE -->
-        <div class="flex flex-row justify-between text-4xl font-bold mt-8">
+        <div class="flex flex-row justify-between text-4xl ml-8 mr-8 font-bold mt-8">
           <div class="flex">
             <img
-              src="/src/assets/locker-dark.svg"
-              alt="logo"
-              class="h-10 w-10 mr-2 mb-2"
+                src="/src/assets/locker-dark.svg"
+                alt="logo"
+                class="h-10 w-10 mr-2 mb-2"
             />
             <h1>Lockios</h1>
           </div>
@@ -22,11 +22,11 @@
         <div class="mt-12 ml-2">
           <div v-for="block in blocks">
             <lockios-block
-              :block="block"
-              :lockios="findLockios(block.id)"
+                :block="block"
+                :lockios="findLockios(block.id)"
             ></lockios-block>
             <div
-              class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+                class="w-100 h-1 mx-auto my-4 mr-8 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
             ></div>
           </div>
         </div>
@@ -44,9 +44,9 @@ import VerticalNavbar from "../components/navbars/VerticalNavbar.vue";
 import LockiosBlock from "../components/lockios/LockiosBlock.vue";
 import MobileMenu from "../components/MobileMenu.vue";
 
-import { useLockioStore } from "../stores/lockio-store";
-import { computed, ref } from "vue";
-import { useRouter } from "vue-router";
+import {useLockioStore} from "../stores/lockio-store";
+import {computed, ref} from "vue";
+import {useRouter} from "vue-router";
 import HamburgerMenu from "../components/HamburgerMenu.vue";
 
 const $router = useRouter();
@@ -58,8 +58,8 @@ const blocks = computed(() => lockioStore.blocks);
 
 const findLockios = (blockId: number) => {
   return lockioStore.lockios.has(blockId)
-    ? lockioStore.lockios.get(blockId)
-    : [];
+      ? lockioStore.lockios.get(blockId)
+      : [];
 };
 
 const menuOpened = ref(false);
