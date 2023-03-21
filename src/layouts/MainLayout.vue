@@ -15,7 +15,7 @@
         <br>
         <button
             class="bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-yellow-700 hover:text-white hover:border-amber-400 transition duration-300"
-            onclick="window.open('http://lockio.fr:8080/swagger-ui.html')"
+            onclick="window.open('http://lockio.fr/swagger-ui.html')"
         >
           Consulter l'API
           <font-awesome-icon icon="fa-solid fa-chevron-right"/>
