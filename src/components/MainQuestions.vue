@@ -15,7 +15,7 @@ const questions = [
   {
     question: "Comment puis-je utiliser un Lockio ?",
     answer: "L'utilisation d'un Lockio est très simple. Les indications seront sur l'écran de la borne." +
-        "Pour déposer vos affaires, sélectionnez un des casiers disponibles. Une fois votre choix effectué, un code vous " +
+        " Pour déposer vos affaires, sélectionnez un des casiers disponibles. Une fois votre choix effectué, un code vous " +
         "sera fourni et vous permettra de déverrouiller le Lockio. La porte s'ouvrira alors automatiquement et vos affaires pourront être récupérés."
   },
   {
@@ -28,7 +28,9 @@ const questions = [
     question:
         "Y-a-t-il une durée maximum d'utilisation ?",
     answer:
-        "Oui. Pour des raisons de sécurité et de disponibilité, le temps d'utilisation d'un Lockio est limité à 72h, soit 3 jours. "
+        "Oui. Pour des raisons de sécurité et de disponibilité, le temps d'utilisation d'un Lockio est limité à 72h, soit 3 jours. " +
+        "Passé ce délai, les affaires seront récupérées par nos soins et vous serez prévenu par mail. Des frais" +
+        " supplémentaires pourront être appliqués."
   },
 ];
 </script>
