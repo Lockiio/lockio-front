@@ -38,7 +38,6 @@
           <button
               @click="$router.push({ name: 'Lockios' })"
               class="bg-gray-700 hover:not:disabled:bg-gray-900 text-white rounded-xl p-3 w-1/2 text-center disabled:opacity-50 :disabled:cursor-not-allowed"
-              disabled
           >
             Se connecter (invité)
           </button>
